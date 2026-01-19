@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Algebra Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: Arial, sans-serif; background:#f0f4f8; margin:0; padding:2rem; text-align:center; }
+    h1 { color:#2c3e50; margin-bottom:2rem; }
+    h2 { margin:2rem 0 1rem; color:#374151; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:1.5rem; max-width:1000px; margin:0 auto; }
+    .card { background:#fff; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,.1); padding:2rem; transition:transform .2s, box-shadow .2s; }
+    .card:hover { transform:translateY(-5px); box-shadow:0 6px 12px rgba(0,0,0,.15); }
+    .card a { text-decoration:none; font-size:1.1rem; color:#2980b9; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <h1>Algebra Hub</h1>
+
+  <!-- Student Apps -->
+  <h2>Student Apps</h2>
+  <div class="grid" id="studentGrid"></div>
+
+  <!-- Other Resources -->
+  <h2>Other Resources</h2>
+  <div class="grid" id="hubGrid"></div>
+
+  <script>
+    // ✅ Student-facing apps only
+    const students = [
+      { file: "Exponent_Escape_Room.html", title: "Exponents Escape Room" },
+      { file: "Inequality_Escape_Room.html", title: "Inequalities Escape Room" },
+      { file: "Literal_Equations_Escape_Room.html", title: "Literal Equations Escape Room" },
+      { file: "Square_Root_Operations_Escape_Room.html", title: "Square Root Operations Escape Room" },
+      { file: "Radical-H_Escape_Room.html", title: "Radical H Escape Room" },
+      { file: "boss_battle_multistep_equations.html", title: "Boss Battle: Multistep Equations" }
+    ];
+
+    // 🌐 Hub links to other repos/sites
+    const hubs = [
+      { file: "https://iowoyemi-blip.github.io/retakes/", title: "Quiz Retakes Site" },
+      { file: "https://iowoyemi-blip.github.io/honors_class_apps/", title: "Honors Class Apps" },
+      { file: "https://iowoyemi-blip.github.io/Study_Guides/", title: "Study Guides Site" }
+    ];
+
+    function render(list, targetId){
+      const grid = document.getElementById(targetId);
+      list.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `<a href="${item.file}" target="_blank">${item.title}</a>`;
+        grid.appendChild(card);
+      });
+    }
+
+    render(students, "studentGrid");
+    render(hubs, "hubGrid");
+  </script>
+</body>
+</html>
