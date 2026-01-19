@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CCHM Hub</title>
+  <title>Algebra Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body { font-family: Arial, sans-serif; background:#f0f4f8; margin:0; padding:2rem; text-align:center; }
@@ -15,25 +15,33 @@
   </style>
 </head>
 <body>
-  <h1>CCHM Hub</h1>
+  <h1>Algebra Hub</h1>
 
-  <!-- Ephesians -->
-  <h2>Ephesians</h2>
+  <!-- Student Apps -->
+  <h2>Student Apps</h2>
   <div class="grid" id="studentGrid"></div>
 
-  <!-- Other Messages -->
-  <h2>Other Messages</h2>
+  <!-- Other Resources -->
+  <h2>Other Resources</h2>
   <div class="grid" id="hubGrid"></div>
 
   <script>
-    // ✅ Main Hub
+    // ✅ Student-facing apps only
     const students = [
-      { file: "https://iowoyemi.github.io/Ephesians/", title: "The Book of Ephesians" },
-      { file: "https://iowoyemi.github.io/Other_Messages/", title: "Inequalities Escape Room" }
-     
+      { file: "Exponent_Escape_Room.html", title: "Exponents Escape Room" },
+      { file: "Inequality_Escape_Room.html", title: "Inequalities Escape Room" },
+      { file: "Literal_Equations_Escape_Room.html", title: "Literal Equations Escape Room" },
+      { file: "Square_Root_Operations_Escape_Room.html", title: "Square Root Operations Escape Room" },
+      { file: "Radical-H_Escape_Room.html", title: "Radical H Escape Room" },
+      { file: "boss_battle_multistep_equations.html", title: "Boss Battle: Multistep Equations" }
     ];
 
-   
+    // 🌐 Hub links to other repos/sites
+    const hubs = [
+      { file: "https://iowoyemi-blip.github.io/retakes/", title: "Quiz Retakes Site" },
+      { file: "https://iowoyemi-blip.github.io/honors_class_apps/", title: "Honors Class Apps" },
+      { file: "https://iowoyemi-blip.github.io/Study_Guides/", title: "Study Guides Site" }
+    ];
 
     function render(list, targetId){
       const grid = document.getElementById(targetId);
